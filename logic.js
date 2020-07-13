@@ -15,7 +15,8 @@ function keyboardEventCheck(){
 function browserTypeCheck(){
     // naive check
     let ua = detect.parse(navigator.userAgent);
-    addNewText("This is the information I found out about your setup:", "h2");
+    addNewText("This is the information I found out about your setup (naive):",
+        "h2");
     console.log(ua)
     addNewText(`You're using ${ua.browser.family}, ` +
     `Version ${ua.browser.major}.${ua.browser.minor}.${ua.browser.patch}`,"p")

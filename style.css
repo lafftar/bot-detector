@@ -9,7 +9,7 @@ div{
     border: 3px inset black;
     display: inline-block;
     width: 60%;
-    margin-top: 30vh;
+    margin-top: 5vh;
 }
 
 div:hover{
@@ -40,7 +40,7 @@ span{
 
 @media only screen and (max-width: 1000px) {
     div{
-        width: 75%;
+        width: 85%;
     }
     h2{
         font-size: 4vw;
@@ -55,7 +55,7 @@ span{
 
 @media only screen and (max-width: 700px) {
     div{
-        margin-top: 5vh;
+        margin-top: 3vh;
     }
     h2{
         font-size: 5vw;
