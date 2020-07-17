@@ -1,4 +1,20 @@
 const page = document.getElementsByTagName('html')[0];
+// Todo, add cool animation for text change.
+// Todo, check more paramters similar to that site, the potential differences.
+
+// if (window.requestIdleCallback) {
+//     requestIdleCallback(function () {
+//         Fingerprint2.get(function (components) {
+//           console.log(components) // an array of components: {key: ..., value: ...}
+//         })
+//     })
+// } else {
+//     setTimeout(function () {
+//         Fingerprint2.get(function (components) {
+//           console.log(components) // an array of components: {key: ..., value: ...}
+//         })
+//     }, 500)
+// }
 
 function addNewText(text, tag) {
     let divContainer = document.getElementById("container");
@@ -51,11 +67,11 @@ function inspectElementOpenCheck() {
     requestAnimationFrame(function check() {
         // this entire function hinges on the fact that console.dir does not run without an
         // active console session
-        console.dir(element); //changes the
-        if(consoleOpened) {
+        console.dir(element);
+        if (consoleOpened) {
             console.log("Gotcha Bitch")
             document.getElementById("debugOpenTest").innerText =
-            "You opened the debugger tool! You could just be a random coder checking" +
+                "You opened the debugger tool! You could just be a random coder checking" +
                 " out my awesome work, but now i'm suspicious of all requests that look" +
                 " like you.";
             return;
@@ -65,10 +81,18 @@ function inspectElementOpenCheck() {
     });
 }
 
+function getFingerprint() {
+    setTimeout(function () {
+        Fingerprint2.get(function (components) {
+            console.log(components);
+        })
+    }, 500)
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
     mouseMovementCheck();
     keyboardEventCheck();
     browserTypeCheck();
     inspectElementOpenCheck();
+    getFingerprint();
 });
